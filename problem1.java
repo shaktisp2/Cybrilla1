@@ -3,39 +3,26 @@ import java.math.*;
 
 class Problems
 {
-	public static int getMaximumSum (int arr[]) {
+	public static int getMaximumSum (int arr[],int k) {
 		
-		int n = arr.length;  // To find the length of array arr
+		int n = arr.length;  
 		
-		int max = -1;      // initially setting maximum to -1
-		for(int i = 0; i < n; i++)
-		{
-			max = Math.max(max, arr[i]);
+		int ct=1;
+		int sum=arr[n-1];
+		
+		for(int i=n-2;i>=0;i--){
+		   if(arr[i]==arr[i+1]){
+		       sum=sum+arr[i];
+		   }
+		   else{
+		       ct++;
+		       if(ct>k) 
+		         break;
+		       sum=sum+arr[i];
+		   }
 		}
-		
-		int []freq = new int[max + 1];  
-		
-		for(int i = 0; i < n; i++)
-		{
-			freq[arr[i]]++;
-		}
-		
-		int ans = 0, i=max;
-		
-		while(i>0){
-			
-			if(freq[i] > 0){
-				ans += i;
-				freq[i-1]--;
-				
-				freq[i]--;
-			}else{			
-			
-				i--;
-			}		
-		}
-		
-		return ans;
+		return sum;
+	
 	}
 
 		public static void main(String[] args){
@@ -44,10 +31,13 @@ class Problems
 			int n =sc.nextInt();
 			int[] arr;
 			arr=new int[n]; 
+			System.out.println("Enter k");
+			int k=sc.nextInt();
 			System.out.println("Enter array");
 			for(int i=0; i<n; i++) {
 				arr[i]=sc.nextInt();
 				}
-		System.out.println(getMaximumSum(arr));
+			Arrays. sort(arr);
+		System.out.println(getMaximumSum(arr,k));
 	}
 }
