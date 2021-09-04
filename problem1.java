@@ -1,7 +1,7 @@
 import java.util.*;
 import java.math.*;
 
-class GFG
+class Problems
 {
 	public static int getMaximumSum (int arr[]) {
 		
