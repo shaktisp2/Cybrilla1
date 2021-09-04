@@ -5,15 +5,15 @@ class Problems
 {
 	public static int getMaximumSum (int arr[]) {
 		
-		int n = arr.length;
+		int n = arr.length;  // To find the length of array arr
 		
-		int max = -1;
+		int max = -1;      // initially setting maximum to -1
 		for(int i = 0; i < n; i++)
 		{
 			max = Math.max(max, arr[i]);
 		}
 		
-		int []freq = new int[max + 1];
+		int []freq = new int[max + 1];  
 		
 		for(int i = 0; i < n; i++)
 		{
