@@ -3,6 +3,9 @@ package cybrilla_Test;
 import java.util.Scanner;
 
 public class Cybrilla {
+	// To find the sum of triplets having sum equal to 0
+	// An optimized approach can be used to solve this problem in O(N) time complexity.
+	
 		static void findTriplets(int[] arr, int n){
 			
 				boolean found = false;
